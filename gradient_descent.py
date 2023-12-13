@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
-
+start_time = time.time()
 # Определение функции и её градиента
 def func(x, y):
     return (2 * x ** 2 + y ** 2) * np.exp(-x ** 2 - y ** 2)
@@ -70,6 +71,11 @@ ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 ax.set_title(r'Градиентный спуск для $f(x, y) = (2x^2 + y^2)exp(-x^2 - y^2)$')
 ax.set_zlim(0, 0.8)
+
+end_time = time.time()
+execution_time = end_time - start_time
+
+print(f"Время выполнения программы: {execution_time} секунд")
 
 # Отображение графика
 plt.show()
